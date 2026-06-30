@@ -1,0 +1,25 @@
+# Dimensionality reduction
+
+Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension. Working in high-dimensional spaces can be undesirable for many reasons; raw data are often sparse as a consequence of the curse of dimensionality, and analyzing the data is usually computationally intractable. Dimensionality reduction is common in fields that deal with large numbers of observations and/or large numbers of variables, such as signal processing, speech recognition, neuroinformatics, and bioinformatics.
+Methods are commonly divided into linear and nonlinear approaches. Linear approaches can be further divided into feature selection and feature extraction. Dimensionality reduction can be used for noise reduction, data visualization, cluster analysis, or as an intermediate step to facilitate other analyses.
+
+Feature selection
+The process of feature selection aims to find a suitable subset of the input variables (features, or attributes) for the task at hand. The three strategies are: the filter strategy (e.g., information gain), the wrapper strategy (e.g., accuracy-guided search), and the embedded strategy (features are added or removed while building the model based on prediction errors).
+Data analysis such as regression or classification can be done in the reduced space more accurately than in the original space.
+
+Feature projection
+Feature projection (also called feature extraction) transforms the data from the high-dimensional space to a space of fewer dimensions. The data transformation may be linear, as in principal component analysis (PCA), but many nonlinear dimensionality reduction techniques also exist. For multidimensional data, tensor representation can be used in dimensionality reduction through multilinear subspace learning.
+
+Principal component analysis (PCA)
+The main linear technique for dimensionality reduction, principal component analysis, performs a linear mapping of the data to a lower-dimensional space in such a way that the variance of the data in the low-dimensional representation is maximized. In practice, the covariance (and sometimes the correlation) matrix of the data is constructed and the eigenvectors on this matrix are computed. The eigenvectors that correspond to the largest eigenvalues (the principal components) can now be used to reconstruct a large fraction of the variance of the original data. Moreover, the first few eigenvectors can often be interpreted in terms of the large-scale physical behavior of the system, because they often contribute the vast majority of the system's energy, especially in low-dimensional systems. Still, this must be proved on a case-by-case basis as not all systems exhibit this behavior. The original space (with dimension of the number of points) has been reduced (with data loss, but hopefully retaining the most important variance) to the space spanned by a few eigenvectors.
+
+Non-negative matrix factorization (NMF)
+NMF decomposes a non-negative matrix to the product of two non-negative ones, which has been a promising tool in fields where only non-negative signals exist, such as astronomy. NMF is well known since the multiplicative update rule by Lee & Seung, which has been continuously developed: the inclusion of uncertainties, the consideration of missing data and parallel computation, sequential construction which leads to the stability and linearity of NMF, as well as other updates including handling missing data in digital image processing.
+With a stable component basis during construction, and a linear modeling process, sequential NMF is able to preserve the flux in direct imaging of circumstellar structures in astronomy, as one of the methods of detecting exoplanets, especially for the direct imaging of circumstellar discs. In comparison with PCA, NMF does not remove the mean of the matrices, which leads to physical non-negative fluxes; therefore NMF is able to preserve more information than PCA as demonstrated by Ren et al.
+
+Kernel PCA
+Principal component analysis can be employed in a nonlinear way by means of the kernel trick. The resulting technique is capable of constructing nonlinear mappings that maximize the variance in the data. The resulting technique is called kernel PCA.
+
+Graph-based kernel PCA
+Other prominent nonlinear techniques include manifold learning techniques such as Isomap, locally linear embedding (LLE), Hessian LLE, Laplacian eigenmaps, and methods based on tangent space analysis. These techniques assume that the high-dimensional input data lies near a low-dimensional manifold embedded in the ambient space, and construct a low-dimensional representation using a cost function that retains local properties of the data; they can be viewed as defining a graph-based kernel for Kernel PCA.
+More recently, techniques have been proposed th

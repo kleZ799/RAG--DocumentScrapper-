@@ -1,0 +1,85 @@
+# Principal component analysis
+
+Principal component analysis (PCA) is a linear dimensionality reduction technique with applications in exploratory data analysis, visualization and data preprocessing.
+The data are linearly transformed onto a new coordinate system such that the directions (principal components) capturing the largest variation in the data can be easily identified.
+The principal components of a collection of points in a real coordinate space are a sequence of 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+  
+ unit vectors, where the 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+-th vector is the direction of a line that best fits the data while being orthogonal to the first 
+  
+    
+      
+        i
+        −
+        1
+      
+    
+    {\displaystyle i-1}
+  
+ vectors. Here, a best-fitting line is defined as one that minimizes the average squared perpendicular distance from the points to the line. These directions (i.e., principal components) constitute an orthonormal basis in which different individual dimensions of the data are linearly uncorrelated. Many studies use the first two principal components in order to plot the data in two dimensions and to visually identify clusters of closely related data points.
+Principal component analysis has applications in many fields such as population genetics, microbiome studies, and atmospheric science.
+
+Overview
+When performing PCA, the first principal component of a set of 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+  
+ variables is the derived variable formed as a linear combination of the original variables that explains the most variance. The second principal component explains the most variance in what is left once the effect of the first component is removed, and we may proceed through 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+  
+ iterations until all the variance is explained. PCA is most commonly used when many of the variables are highly correlated with each other and it is desirable to reduce their number to an independent set.
+The first principal component can equivalently be defined as a direction that maximizes the variance of the projected data. The 
+  
+    
+      
+        i
+      
+    
+    {\displaystyle i}
+  
+-th principal component can be taken as a direction orthogonal to the first 
+  
+    
+      
+        i
+        −
+        1
+      
+    
+    {\displaystyle i-1}
+  
+ principal components that maximizes the variance of the projected data.
+For either objective, it can be shown that the principal components are eigenvectors of the data's covariance matrix. Thus, the principal components are often computed by eigendecomposition of the data covariance matrix or singular value decomposition of the data matrix. PCA is the simplest of the true eigenvector-based multivariate analyses and is closely related to factor analysis. Factor analysis typically incorporates more domain-specific assumptions about the underlying structure and solves eigenvectors of a slightly different matrix. PCA is also related to canonical correlation analysis (CCA). CCA defines coordinate systems that optimally describe the cross-covariance between two datasets while PCA defines a new orthogonal coordinate system that optimally describes variance in a single dataset. Robust and L1-norm-based variants of standard PCA have also been proposed.
+
+History
+PCA was invented in 1901 by Karl Pearson, as an analogue of the principal axis theorem in mechanics; it was later independently developed and named by Harold Hotelling in the 1930s. Depending on the field of application, it is also named the discrete Karhunen–Loève transform (KLT) in signal processing, the Hotelling transform in multivariate quality control, proper orthogonal decomposition (POD) in mechanical engineering, singular value decomposition (SVD) of X (invented in the last quarter of the 19th century), eigenvalue decomposition (EVD) of XTX in linear algebra, factor analysis (for a discussion of the differences between PCA and factor analysis see Ch. 7 of Jolliffe's Principal Component Analysis), Eckart–Young theorem (Harman, 1960), or empirical orthogonal functions (EOF) in meteorological science (Lorenz, 1956), empirical eigenfunction decomposition (Sirovich, 1987), quasiharmonic modes (Brooks et al., 1988), spectral decomposition in noise and vibration, and empirical modal analysis in structural dynamics.
+
+Intuition
+PCA can be thought of as fitting a p-dimensional ellipsoid to the data, where each axis of the ellipsoid represents a principal component. If some axis of the ellipsoid is small, then the variance along that axis is also small.
+To find the axes of the ellipsoid, we must first center the values of each variable in the dataset on 0 by subtracting the mean of the variable's observed values from each of those values. These transformed values are used instead of the original observed values for each of the variables. Then, we compute the covariance matrix of the data and calcu

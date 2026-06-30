@@ -1,0 +1,15 @@
+langchain
+langchain-community
+langchain-openai
+langchain-pinecone
+chromadb
+sentence-transformers
+pinecone-client
+pypdf
+tiktoken
+python-dotenv
+openai
+datasets
+wikipedia-api
+ragas
+rank-bm25

@@ -1,0 +1,20 @@
+{
+  "fixed": {
+    "total_chunks": 636,
+    "avg_size": 447,
+    "min_size": 7,
+    "max_size": 1364
+  },
+  "recursive": {
+    "total_chunks": 904,
+    "avg_size": 312,
+    "min_size": 6,
+    "max_size": 511
+  },
+  "semantic": {
+    "total_chunks": 467,
+    "avg_size": 621,
+    "min_size": 7,
+    "max_size": 1021
+  }
+}

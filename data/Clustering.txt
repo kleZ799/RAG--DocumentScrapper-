@@ -1,0 +1,19 @@
+# Clustering
+
+Clustering can refer to the following:
+In computing:
+
+Computer cluster, the technique of linking many computers together to act like a single computer
+Data cluster, an allocation of contiguous storage in databases and file systems
+Cluster analysis, the statistical task of grouping a set of objects in such a way that objects in the same group are placed closer together (such as the k-means clustering)
+In hash tables, the mapping of keys to nearby slots
+In economics:
+
+Business cluster, a geographic concentration of interconnected businesses, suppliers, and associated institutions in a particular field
+In graph theory:
+
+The formation of clusters of linked nodes in a network, measured by the clustering coefficient
+Correlation clustering, a way of clustering nodes in a signed graph
+
+See also
+Cluster (disambiguation)

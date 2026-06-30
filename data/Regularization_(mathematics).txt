@@ -1,0 +1,110 @@
+# Regularization (mathematics)
+
+In mathematics, statistics, finance, and computer science, particularly in machine learning and inverse problems, regularization is a process that converts the answer to a problem to a simpler one. It is often used in solving ill-posed problems or to prevent overfitting. There is a strong connection between regularization methods and Bayesian approaches for solving such ill-posed problems .
+Although regularization procedures can be divided in many ways, the following delineation is particularly helpful:
+
+Explicit regularization is regularization whenever one explicitly adds a term to the optimization problem.  These terms could be priors, penalties, or constraints. Explicit regularization is commonly employed with ill-posed optimization problems. The regularization term, or penalty, imposes a cost on the optimization function to make the optimal solution unique.
+Implicit regularization is all other forms of regularization.  This includes, for example, early stopping, using a robust loss function, and discarding outliers. Implicit regularization is essentially ubiquitous in modern machine learning approaches, including stochastic gradient descent for training deep neural networks, and ensemble methods (such as random forests and gradient boosted trees).
+In explicit regularization, independent of the problem or model, there is always a data term, that corresponds to a likelihood of the measurement, and a regularization term that corresponds to a prior. By combining both using Bayesian statistics, one can compute a posterior, that includes both information sources and therefore stabilizes the estimation process. By trading off both objectives, one chooses to be more aligned to the data or to enforce regularization (to prevent overfitting). There is a whole research branch dealing with all possible regularizations. In practice, one usually tries a specific regularization and then figures out the probability density that corresponds to that regularization to justify the choice. It can also be physically motivated by common sense or intuition.
+In machine learning, the data term corresponds to the training data and the regularization is either the choice of the model or modifications to the algorithm. It is always intended to reduce the generalization error, i.e. the error score with the trained model on the evaluation set (testing data) and not the training data.
+One of the earliest uses of regularization is Tikhonov regularization (ridge regression), related to the method of least squares.
+
+Regularization in machine learning
+In machine learning, a key challenge is enabling models to accurately predict outcomes on unseen data, not just on familiar training data. Regularization is crucial for addressing overfitting—where a model memorizes training data details but cannot generalize to new data. The goal of regularization is to encourage models to learn the broader patterns within the data rather than memorizing it. Techniques like early stopping, L1 and L2 regularization, and dropout are designed to prevent overfitting and underfitting, thereby enhancing the model's ability to adapt to and perform well with new data, thus improving model generalization.
+
+Early stopping
+Stops training when validation performance deteriorates, preventing overfitting by halting before the model memorizes training data.
+
+L1 and L2 regularization
+Adds penalty terms to the cost function to discourage complex models:
+
+L1 regularization (also called LASSO) leads to sparse models by adding a penalty based on the absolute value of coefficients.
+L2 regularization (also called ridge regression) encourages smaller, more evenly distributed weights by adding a penalty based on the square of the coefficients.
+
+Dropout
+In the context of neural networks, the Dropout technique repeatedly ignores random subsets of neurons during training, which simulates the training of multiple neural network architectures at once to improve generalization.
+
+Classification
+Empirical learning of classifiers (from a finite data set) is always an underdetermined problem, because it attempts to infer a function of any 
+  
+    
+      
+        x
+      
+    
+    {\displaystyle x}
+  
+ given only examples 
+  
+    
+      
+        
+          x
+          
+            1
+          
+        
+        ,
+        
+          x
+          
+            2
+          
+        
+        ,
+        …
+        ,
+        
+          x
+          
+            n
+          
+        
+      
+    
+    {\displaystyle x_{1},x_{2},\dots ,x_{n}}
+  
+.
+A regularization term (or regularizer) 
+  
+    
+      
+        R
+        (
+        f
+        )
+      
+    
+    {\displaystyle R(f)}
+  
+ is added to a loss function:
+
+  
+    
+      
+        
+          min
+          
+            f
+          
+        
+        
+          ∑
+          
+            i
+            =
+            1
+          
+          
+            n
+          
+        
+        V
+        (
+        f
+        (
+        
+          x
+          
+            i
+   

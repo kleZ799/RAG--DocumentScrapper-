@@ -1,0 +1,256 @@
+# K-nearest neighbors algorithm
+
+In statistics, the k-nearest neighbors algorithm (k-NN) is a non-parametric supervised learning method. It was first developed by Evelyn Fix and Joseph Hodges in 1951, and later expanded by Thomas Cover. In classification, a new example is assigned a label based on the labels of its k nearest training examples; in regression, the prediction is computed from the values of those neighbors.
+Most often, it is used for classification, as a k-NN classifier, the output of which is a class membership. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the class of that single nearest neighbor.
+The k-NN algorithm can also be generalized for regression. In k-NN regression, also known as nearest neighbor smoothing, the output is the property value for the object. This value is the average of the values of k nearest neighbors. If k = 1, then the output is simply assigned to the value of that single nearest neighbor, also known as nearest neighbor interpolation.
+For both classification and regression, a useful technique can be to assign weights to the contributions of the neighbors, so that nearer neighbors contribute more to the average than distant ones. For example, a common weighting scheme consists of giving each neighbor a weight of 1/d, where d is the distance to the neighbor.
+The input consists of the k closest training examples in a data set. 
+The neighbors are taken from a set of objects for which the class (for k-NN classification) or the object property value (for k-NN regression) is known. This can be thought of as the training set for the algorithm, though no explicit training step is required.
+A peculiarity (sometimes even a disadvantage) of the k-NN algorithm is its sensitivity to the local structure of the data.
+In k-NN classification the function is only approximated locally and all computation is deferred until function evaluation. Since this algorithm relies on distance, if the features represent different physical units or come in vastly different scales, then feature-wise normalizing of the training data can greatly improve its accuracy.
+
+Statistical setting
+Suppose we have pairs 
+  
+    
+      
+        (
+        
+          X
+          
+            1
+          
+        
+        ,
+        
+          Y
+          
+            1
+          
+        
+        )
+        ,
+        (
+        
+          X
+          
+            2
+          
+        
+        ,
+        
+          Y
+          
+            2
+          
+        
+        )
+        ,
+        …
+        ,
+        (
+        
+          X
+          
+            n
+          
+        
+        ,
+        
+          Y
+          
+            n
+          
+        
+        )
+      
+    
+    {\displaystyle (X_{1},Y_{1}),(X_{2},Y_{2}),\dots ,(X_{n},Y_{n})}
+  
+ taking values in 
+  
+    
+      
+        
+          
+            R
+          
+          
+            d
+          
+        
+        ×
+        {
+        1
+        ,
+        2
+        }
+      
+    
+    {\displaystyle \mathbb {R} ^{d}\times \{1,2\}}
+  
+, where Y is the class label of X, so that 
+  
+    
+      
+        X
+        
+          |
+        
+        Y
+        =
+        r
+        ∼
+        
+          P
+          
+            r
+          
+        
+      
+    
+    {\displaystyle X|Y=r\sim P_{r}}
+  
+ for 
+  
+    
+      
+        r
+        =
+        1
+        ,
+        2
+      
+    
+    {\displaystyle r=1,2}
+  
+ (and probability distributions 
+  
+    
+      
+        
+          P
+          
+            r
+          
+        
+      
+    
+    {\displaystyle P_{r}}
+  
+). Given some norm 
+  
+    
+      
+        ‖
+        ⋅
+        ‖
+      
+    
+    {\displaystyle \|\cdot \|}
+  
+ on 
+  
+    
+      
+        
+          
+            R
+          
+          
+            d
+          
+        
+      
+    
+    {\displaystyle \mathbb {R} ^{d}}
+  
+ and a point 
+  
+    
+      
+        x
+        ∈
+        
+          
+            R
+          
+          
+            d
+          
+        
+      
+    
+    {\displaystyle x\in \mathbb {R} ^{d}}
+  
+, let 
+  
+    
+      
+        (
+        
+          X
+          
+            (
+            1
+            )
+          
+        
+        ,
+        
+          Y
+          
+            (
+            1
+            )
+          
+        
+        )
+        ,
+        …
+        ,
+        (
+        
+          X
+          
+            (
+            n
+            )
+          
+        
+        ,
+        
+          Y
+          
+            (
+            n
+            )
+          
+        
+        )
+      
+    
+    {\displaystyle (X_{(1)},Y_{(1)}),\dots ,(X_{(n)},Y_{(n)})}
+  
+ be a reordering of the training data such that 
+  
+    
+      
+        ‖
+        
+          X
+          
+            (
+            1
+            )
+          
+        
+        −
+        x
+        ‖
+        ≤
+        ⋯
+        ≤
+        ‖
+        
+    

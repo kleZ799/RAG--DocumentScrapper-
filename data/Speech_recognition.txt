@@ -1,0 +1,34 @@
+# Speech recognition
+
+Speech recognition (automatic speech recognition (ASR), computer speech recognition, or speech-to-text (STT)) is a sub-field of computational linguistics concerned with methods and technologies that translate spoken language into text or other interpretable forms.
+Speech recognition applications include voice user interfaces, where the user speaks to a device, which "listens" and processes the audio. Common voice applications include interpreting commands for calling, call routing, home automation, and aircraft control. These applications are called direct voice input. Productivity applications include searching audio recordings, creating transcripts, and dictation. 
+Speech recognition can be used to analyse speaker characteristics, such as identifying native language using pronunciation assessment. 
+Voice recognition (speaker identification) refers to identifying the speaker, rather than speech contents. Recognizing the speaker can simplify the task of translating speech in systems trained on a specific person's voice. It can also be used to authenticate the speaker as part of a security process.
+
+History
+Applications for speech recognition developed over many decades, with progress accelerated due to advances in deep learning and the use of big data. These advances are reflected in an increase in academic papers, and greater system adoption.
+Key areas of growth include vocabulary size, more accurate recognition for unfamiliar speakers (speaker independence), and faster processing speed.
+
+Pre-1970
+1952 – Bell Labs researchers, Stephen Balashek, R. Biddulph, and K. H. Davis, built Audrey for single-speaker digit recognition. Their system located the formants in the power spectrum of each utterance.
+1960 – Gunnar Fant developed and published the source–filter model of speech production.
+1962 – IBM's 16-word "Shoebox" machine's speech recognition debuted at the 1962 World's Fair.
+1966 – Linear predictive coding, a speech coding method, was proposed by Fumitada Itakura of Nagoya University and Shuzo Saito of Nippon Telegraph and Telephone.
+1969 – Funding at Bell Labs came to a halt for several years after the company's head engineer, John R. Pierce, wrote an open letter criticizing speech recognition research. This defunding lasted until Pierce retired and James L. Flanagan took over.
+Raj Reddy was the first person to work on continuous speech recognition, as a graduate student at Stanford University in the late 1960s. Previous systems required users to pause after each word. Reddy's system issued spoken commands for playing chess.
+Around this time, Soviet researchers invented the dynamic time warping (DTW) algorithm and used it to create a recognizer capable of operating on a 200-word vocabulary. DTW processed speech by dividing it into short frames (e.g. 10 ms segments) and treating each frame as a unit. Speaker independence, however, remained unsolved.
+
+1970–1990
+1971 – DARPA funded a five-year speech recognition research project, Speech Understanding Research, seeking a minimum vocabulary size of 1,000 words. The project considered speech understanding a key to achieving progress in speech recognition, which was later disproved. BBN, IBM, Carnegie Mellon (CMU), and Stanford Research Institute participated.
+1972 – The IEEE Acoustics, Speech, and Signal Processing group held a conference in Newton, Massachusetts.
+1976 – The first ICASSP was held in Philadelphia, which became a major venue for publishing on speech recognition.
+During the late 1960s, Leonard Baum developed the mathematics of Markov chains at the Institute for Defense Analysis. A decade later, at CMU, Raj Reddy's students James Baker and Janet M. Baker began using the hidden Markov model (HMM) for speech recognition. James Baker had learned about HMMs while at the Institute for Defense Analysis. HMMs enabled researchers to combine sources of knowledge, such as acoustics, language, and syntax, in a unified probabilistic model.
+By the mid-1980s, Fred Jelinek's team at IBM created a voice-activated typewriter called Tangora, which could handle a 20,000-word vocabulary. Jelinek's statistical approach placed less emphasis on emulating human brain processes in favor of statistical modelling. (Jelinek's group independently discovered the application of HMMs to speech.) This was controversial among linguists since HMMs are too simplistic to account for many features of human languages. However, the HMM proved to be a highly useful way for modelling speech and replaced dynamic time warping as the dominant speech recognition algorithm in the 1980s.
+
+1982 – Dragon Systems, founded by James and Janet M. Baker, was one of IBM's few competitors.
+
+Practical speech recognition
+The 1980s also saw the introduction of the n-gram language model.
+
+1987 – The back-off model enabled language models to use multiple-length n-grams, and CSELT used HMM to recognize languages (in software and hardware, e.g. RIPAC).
+At the end of the DARPA program in 1976, the best compute
